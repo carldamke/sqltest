@@ -1,0 +1,57 @@
+* {
+    margin:0;
+    padding:0;
+}
+html {
+    scrollbar-base-color:#ffff99;
+    scrollbar-arrow-color:#000000;
+    scrollbar-track-color:#870101;
+}
+body {
+    background-color:#870101;
+    color:#000000;
+    font-family:Herculanum, Verdana, Arial;
+    padding-left:20px;
+    padding-right:20px;
+    font-size:14px;
+    background-image:url('../bilder/verlauf.png');
+    background-repeat:repeat-y;
+    cursor:default;
+    scrollbar-base-color:#ffff99;
+    scrollbar-arrow-color:#000000;
+    scrollbar-track-color:#870101;
+}
+
+.wrap {
+    width: 550px;
+    height: 400px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.inwrap {
+    margin-top: 100px;
+    margin-left: 70px;
+}
+
+select {
+    border:2px solid #000000;
+    background-color:#870101;
+    color:#ffffff;
+    font-family:Capitals, Verdana, Arial;
+    font-size:14px;
+}
+
+select:focus {
+    border:2px solid #ffffff; 
+}
+
+a {
+    color:#ff0000;
+    text-decoration:none;
+    font-size:20px;
+}
+
+a:hover {
+    text-decoration:underline;
+}
