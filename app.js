@@ -37,6 +37,14 @@ function reg(data) {
     });
 }
 
+app.get('/add', function(req,res) {
+    reg({
+        id: "1",
+        user: "otto",
+        pw: "otto2"
+    });
+});
+
 setTimeout(() => {
     /**reg({
         id: "1",
