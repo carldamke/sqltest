@@ -6,11 +6,176 @@
         <link rel="icon" href="../../bilder/favicon.ico" type="image/x-icon">
         <meta charset="utf-8">
         <link rel="stylesheet" href="../../styles/style.css" type="text/css">
-        <script src="../index.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../../include/jquery.js"></script>
+        <script type="text/javascript" src="../../include/interface.js"></script>
+        <script type="text/javascript">
+            window.defaultStatus = "C O R T Y S - Das kostenlose Browsergame";
+            $(document).ready(function() {
+                $("input[type='submit'], input[type='button']").addClass("submit");
+            });
+   
+            function meld(text) {
+                window.alert(text);
+            }
+            function out(typ) {
+                if(typ == 1) {
+                    document.getElementById("bg-musik").innerHTML = "";
+                } else {
+                    document.getElementById("bg-musik").innerHTML = "<embed src='../cortys-bg.mp3' autostart='true' loop='true' width='0' height='0'>";  
+                }
+            }
+            var seite = 2;
+            function page(typ) {
+                var korrekt = 0;
+                if(typ == 1) {
+                    if(seite == 1) {
+                        korrekt = 1;
+                        var text = 'Am Anfang kannst du beim Baumen&uuml; nur ein Geb&auml;ude bauen, die Hochschule.<br><br>Wenn du die Hochschule gebaut hast, kannst du forschen und dadurch neue Geb&auml;ude freischalten!';
+                        var bild = '../bilder/intro/intro2.gif';
+                    }
+                    if(seite == 2) {
+                        korrekt = 1;
+                        var text = 'Je l&auml;nger du CORTYS spielst, desto weiter kommst du.<br>Gib nicht auf, denn erst wenn du alle Geb&auml;ude hast, wird das Spiel spannend!<br><br>Du musst am Anfang ca. 2 Minuten online sein, bis du das zweite Geb&auml;ude freigeschaltet hast. In dieser Zeit kannst aber durch den \"Mystischen Turm\" auf eine andere Insel reisen und dort ein kleines Minigame spielen.';
+                        var bild = '../bilder/intro/intro3.gif';
+                    }
+           
+                    if(korrekt == 1) {
+                        seite = seite+1;
+                        document.getElementById('seite').innerHTML = 'Seite ' +seite+ '/3';
+                        document.getElementById('text').innerHTML = text;
+                        document.getElementById('bild').setAttribute('src', bild);
+                    }
+                } else if(typ == 2) {
+                    seite = 1;
+                    var text = 'Die Inselkette von CORTYS soll erforscht werden.<br>Sei einer der Magier, die auf einer von tausenden Inseln siedeln und ihre Magieschule bauen!<br><br>Du f&auml;ngst auf einer unbewohnten Insel an, wo du nur dein Haupthaus errichtet hast.';
+                    var bild = '../bilder/intro/intro1.gif';
+                    document.getElementById('seite').innerHTML = 'Seite 1/3';
+                    document.getElementById('text').innerHTML = text;
+                    document.getElementById('bild').setAttribute('src', bild);  
+                } else {
+                    if(seite == 3) {
+                        korrekt = 1;
+                        var text = 'Am Anfang kannst du beim Baumen&uuml; nur ein Geb&auml;ude bauen, die Hochschule.<br><br>Wenn du die Hochschule gebaut hast, kannst du forschen und dadurch neue Geb&auml;ude freischalten!';
+                        var bild = '../bilder/intro/intro2.gif';
+                    }
+                    if(seite == 2) {
+                        korrekt = 1;
+                        var text = 'Die Inselkette von CORTYS soll erforscht werden.<br>Sei einer der Magier, die auf einer von tausenden Inseln siedeln und ihre Magieschule bauen!<br><br>Du f&auml;ngst auf einer unbewohnten Insel an, wo du nur dein Haupthaus errichtet hast.';
+                        var bild = '../bilder/intro/intro1.gif';
+                    }
+                    if(korrekt == 1) {
+                        seite = seite-1;
+                        document.getElementById('seite').innerHTML = 'Seite ' +seite+ '/3';
+                        document.getElementById('text').innerHTML = text;
+                        document.getElementById('bild').setAttribute('src', bild);
+                    }
+                }
+            }
+            $(document).ready(function() {
+                $("#menue3").click(function(){
+                    $("#introfenster").show("slow");
+                    page(2);
+                });
+                $("#menue4").click(function(){
+                    $("#impressumfenster").show("slow");
+                });
+                $("#menue5").click(function(){
+                    $("#agbfenster").show("slow");
+                });
+                $("#menue6").click(function(){
+                    $("#werbefenster").show("slow");
+                    $(".video").show();
+                });
+                $(".close").click(function(){
+                    $(".video").hide();
+                    $(".menuefenster").hide("slow");
+                });
+            });
+        </script>
     </head>
     <body>
-        IM AUFBAU
-        <button><a href="/">Zurück</a></button>
-        <div id="year" style="position: absolute; bottom: 5px; right: 5px; color: #ffffff;">&copy; 2008 - 2009 &middot; 2022 Projekt neu aufgenommen</div>
+        <div id='logintext'>Du bist in Welt: Primus - <a href='/'>zum Start</a></div>
+        <div id='introfenster' class='menuefenster'>
+            <a href='#' class='close'>close</a>
+            <h2>Einführung</h2>
+            <table style='width:100%;'>
+                <tr style='width:50%; vertical-align:top;'>
+                    <td>
+                        <img src='' style='width:80%;' alt='' id='bild'>
+                    </td>
+                    <td style='width:50%; vertical-align:top;'>
+                        <h3 id='seite'>Bitte warten...</h3>
+                        <span id='text'></span>
+                        <br><br><span id='navi'><a href='javascript:page(0)'>zur&uuml;ck</a> - <a href='javascript:page(1)'>weiter</a></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id='agbfenster' class='menuefenster'>
+            <a href='#' class='close'>close</a>
+            <h2>Regeln (AGB)</h2>
+            <div style='font-size:12px; overflow:auto; height:290px; scrollbar-base-color:#870101; scrollbar-arrow-color:#000000; scrollbar-track-color:#ffff99;'>
+                <b>I. Nutzungsbedingungen</b><br>
+                Jeder Nutzer darf pro Spielwelt maximal einen Account auf dem Server angemeldet haben. Bei der Nutzung von mehr als einem Account, beh&auml;lt sich der Betreiber vor alle Accounts des Spielers zu l&ouml;schen. Auch das <u>intensive</u> nutzen von Bugs (Spielfehlern) kann zur Sperrung des Accounts f&uuml;hren. Wenn tats&auml;chlich ein Bug gefunden wird, sollte der Administrator umgehend davon informiert werden.<br>Auch kann ein Spielaccount, bei sehr langer Inaktivit&auml;t (mehr als 1 Monat), gel&ouml;scht werden.
+                <br><br>
+                <b>II. Widerrufsrecht</b><br>
+                Jeder Spieler kann seinen Account ohne Angabe einen Grundes l&ouml;schen, sodass s&auml;mtliche Angaben und Spielst&auml;nde des Spielers unwiederruflich aus dem Spiel entfernt werden.
+                <br><br>
+                <b>III. Datenschutz</b><br>
+                Alle Daten, ausgenommen des Passworts, des Spielers werden unverschl&uuml;sselt gespeichert und bei einem Hack oder Absturz des Systems k&ouml;nnen Daten verloren gehen. Kein Spieler hat in diesem Fall das Recht, wegen verlorenen Daten zu klagen.
+                <br><br>
+                <b>IV. Kosten</b><br>
+                Das Spiel wird vollkommen kostenlos betrieben und es entstehen auch nach der Anmeldung keine Kosten. Auch Premiumaccounts oder sonstige kostenpfilchtige Zusatzfunktionen werden nicht angeboten und auch nicht angeboten werden.
+                <br><br>
+                <b>V. Urheberrecht</b><br>
+                Alle Texte, Bilder, Informationen unterliegen dem Urheberrecht und anderen Gesetzen zum Schutz des geistigen Eigentums. Das Copyright f&uuml;r ver&ouml;ffentlichte, vom Autor selbst erstellte Objekte bleibt allein beim Autor der Seiten. Die Vervielf&auml;ltigung oder anderweitige Verwendung dieser Text-, Bild- oder sonstiger Objekte in anderen elektronischen oder gedruckten Publikationen bedarf der ausdr&uuml;cklichen Zustimmung des Autors.
+                <br><br>
+                <b>VI. Haftung</b><br>
+                Der Autor &uuml;bernimmt keine Gew&auml;hr f&uuml;r die Verf&uuml;gbarkeit und St&ouml;rungsfreiheit des Online-Angebotes. Er &uuml;bernimmt ebenfalls keine Gew&auml;hr f&uuml;r die Aktualit&auml;t, Korrektheit, Vollst&auml;ndigkeit oder Qualit&auml;t der bereitgestellten Informationen. Der Autor haftet nicht f&uuml;r indirekte, besondere, Neben- oder Folgesch&auml;den, die sich aus Nutzung dieser Website oder bei Verz&ouml;gerung oder Unm&ouml;glichkeit einer solchen Nutzung der Informationen und Services, die auf der Website zug&auml;nglich gemacht werden ergeben, unabh&auml;ngig von dem Rechtsgrund einer solchen Haftung.
+                <br><br>
+                <b>VII. Salvatorische Klausel</b><br>
+                Sollten einzelne Bestimmungen dieser Bedingungen ganz oder teilweise nicht rechtswirksam oder nicht durchf&uuml;hrbar sein oder werden, so wird hierdurch die G&uuml;ltigkeit der &uuml;brigen Bestimmungen nicht ber&uuml;hrt. Das Gleiche gilt f&uuml;r den Fall, dass die Vereinbarung eine Regelungsl&uuml;cke enth&auml;lt. Anstelle der unwirksamen oder undurchf&uuml;hrbaren Bestimmungen oder zur Ausf&uuml;llung der L&uuml;cke soll eine angemessene Regelung gelten, die, soweit rechtlich m&ouml;glich, dem wirtschaftlichen Sinn der urspr&uuml;nglichen Regelung am n&auml;chsten kommt bzw. dem entspricht, was der Autor und der Nutzer gewollt h&auml;tten, sofern sie diesen Punkt bedacht h&auml;tten.
+            </div>
+        </div>
+        <div id='impressumfenster' class='menuefenster'>
+            <a href='#' class='close'>close</a>
+            <h2>Impressum</h2>
+            <b>Gesch&auml;ftsf&uuml;hrer:</b> Clemens Damke<br><br>
+            <b>E-Mail:</b> <a href='mailto:admin@cortys.de'>admin@cortys.de</a><br><br>
+            <b>Geholfen haben:</b> Mathias Reinst&auml;dler und Clara Damke<br><br>
+            <b>Musik von:</b> <a href='http://www.hartwigmedia.com' target='_blank'>Hartwigmedia</a><br><br>
+            <b>Grafik:</b> Macromedia (Adobe) Flash 8 Professional<br><br>
+            <b>Werbespot:</b> Apple iMovie HD 6<br><br>
+            <b>Editor:</b> SubEthaEdit 2.0.1<br><br>
+            <b>Spielversion:</b> 1.9<br><br>
+            <b>Optimiert f&uuml;r:</b> Apple Safari - Mozilla Firefox
+        </div>
+        <div id='werbefenster' class='menuefenster'>
+            <a href='javascript:out(0)' class='close'>close</a>
+            <h2>Werbespot</h2>
+            <center><object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/y-VaC3T6QB8&hl=de&fs=1&rel=0&color1=0x5d1719&color2=0xcd311b"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/y-VaC3T6QB8&hl=de&fs=1&rel=0&color1=0x5d1719&color2=0xcd311b" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="400" height="325"></embed></object></center>
+        </div>
+        <div id='wait' class='menuefenster'>
+            <h2>Bitte warten...</h2>
+        </div>
+        <div id='wrap'>
+            <a href="javascript:tonchange()" style="position:absolute; top:30px; right:90px; border:0px solid #870101;" title="Musik: Aus"><img src="../../bilder/speaker/off.gif" alt="Musik: Aus" style="border:0px solid #870101;"></a>
+            <script type="text/javascript">
+                function tonchange() {
+                    
+                }
+            </script>
+            <div id='inwrap'>
+                <ul>
+                    <li><a href='#' id='menue1'>Login</a></li>
+                    <li><a href='#' id='menue2'>Registrierung</a></li>
+                    <li><a href='#intro' id='menue3'>Einführung</a></li>
+                    <li><a href='http://blog.cortys.de' id='menue7' target="_blank">News-Blog (Offline)</a></li>
+                    <li><a href='javascript:out(1)' id='menue6'>Werbespot</a></li>
+                    <li><a href='#terms' id='menue5'>Regeln (AGB)</a></li>
+                    <li><a href="#imprint" id='menue4'>Impressum</a></li>
+                </ul>
+            </div>
+        </div>
     </body>
 </html>

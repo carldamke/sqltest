@@ -22,16 +22,20 @@ body {
     scrollbar-track-color:#870101;
 }
 
-.wrap {
+#wrap {
     width: 550px;
     height: 400px;
     position: relative;
     margin: 0 auto;
+    background-image: url('../bilder/bg.gif');
 }
 
-.inwrap {
+#inwrap {
+    width: 250px;
+    height: 260px;
     margin-top: 100px;
     margin-left: 70px;
+    position: absolute;
 }
 
 select {
@@ -54,4 +58,394 @@ a {
 
 a:hover {
     text-decoration:underline;
+}
+
+@media (min-width: 1200px) {
+	#schule_wrap {
+		position: relative;
+		width: 800px;
+		padding: 0;
+		margin: 0 auto;
+	}
+}
+
+h2 {
+    margin-bottom:20px;
+    margin-top:10px;
+}
+h3 {
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+li a {
+    font-size:20px;
+    background:none;
+    color:#000000;
+    padding-left:10px;
+    padding-right:10px;
+}
+li a:hover {
+    text-decoration:none;
+    font-weight:bold;
+}
+li a:active {
+    color:#ff0000;
+}
+ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+    list-style-image:url('../../bilder/zeichen.gif');
+}
+ol {
+    font-size:14px;
+}
+ul li {
+    margin-bottom:6px;
+    list-style:none;
+    list-style-image:url('../../bilder/zeichen.gif');
+}
+ul li:hover {
+    list-style-image:url('../../bilder/zeichen-hover.gif');
+    font-weight:bold;
+}
+#nachrichten {
+    list-style-image:url('../../bilder/nachricht.gif');
+    color:#ff5500; 
+    font-weight:bold;
+    cursor:pointer;
+    margin-left:30px;
+}
+#nachrichten li {
+    list-style-image:url('../../bilder/nachricht.gif');
+}
+#nachrichten li:hover {
+    text-decoration:underline;
+}
+#werbung {
+    border:2px solid #000000;
+    background-color:#ffff99;
+    padding:3px;
+    font-size:12px;
+    cursor:default;
+    background-image:url('../../bilder/muster.gif');
+    background-repeat:repeat;
+    overflow:hidden;
+    height:20px;
+    font-size:10px;
+}
+#werbung img, #werbung a {
+    height:20px;
+    width:57px;
+    margin:0;
+    margin-bottom:10px;
+    padding:0;
+    border:0px solid #000000;
+    vertical-align:middle;
+    font-size:10px;
+}
+#werbung div {
+    display:inline;
+    font-size:10px;
+}
+label {
+    font-size:14px;
+}
+input, textarea {
+    font-size:14px;
+    font-family:Capitals, Verdana, Arial;
+    margin-bottom:5px;
+    text-align:left;
+    border:2px solid #000000;
+    background-image:url('../../bilder/textverlauf.png');
+    background-repeat:repeat-x;
+    background-color:#eeeeee;
+    padding:2px;
+}
+textarea {
+    width:320px;
+    height:120px;  
+}
+.langinput {
+    width:320px;
+}
+input:focus, textarea:focus, input:active, textarea:active {
+    border:2px solid #ffffff;
+}
+.submit, input[type="submit"], input[type="button"] {
+    background-color:#870101;
+    border:2px solid #ffffff;
+    color:#ffffff;
+    background-image:none;
+    cursor:pointer;
+    padding-left:5px;
+    padding-right:5px;
+}
+input[type="submit"]:hover, input[type="button"]:hover, .submit:hover {
+    background-color:#ff0000;
+}
+input[type="submit"]:active, input[type="submit"]:focus, input[type="button"]:active, input[type="button"]:focus, .submit:active, .submit:focus {
+    background-color:#870101;
+}
+#check {
+    font-size:12px;
+    width:30px;
+}
+hr {
+    height:2px;
+    background-color:#870101;
+    width:230px;
+    margin-left:0;
+    border:0px solid #870101;
+}
+#logintext {
+    position:absolute;
+    font-size:10px;
+    margin-top:2px;
+    padding:2px;
+    background-color:#ffff99;
+    border:2px solid #000000;
+    right:2px;
+    z-index:1000;
+    background-image:url('../../bilder/muster.gif');
+    background-repeat:repeat;
+}
+#logintext a:hover {
+    text-decoration:underline;
+    color:#ff0000;
+}
+#logintext a {
+    font-size:10px;
+    font-weight:bold;
+    color:#aa0000;
+}
+#statistik {
+    background-color:#ffff99;
+    border:2px solid #000000;
+    padding:3px;
+    font-size:12px;
+    cursor:default;
+    width:800px;
+    position:relative;
+    top:2px;
+    background-image:url('../../bilder/muster.gif');
+    background-repeat:repeat;
+    z-index:1001;
+    overflow:hidden;
+}
+#statistik a {
+    font-size:12px;
+    font-weight:bold;
+    color:#aa0000;
+}
+#statistik a:hover {
+    text-decoration:underline;
+    color:#ff0000;
+}
+#schule, .zusatzinseln {
+    width:800px;
+    height:489px;
+    background-repeat:no-repeat;
+    margin-top:5px;
+    margin-bottom:5px;
+    padding:0;
+    cursor:default;
+    position:relative;
+    overflow:hidden;
+}
+.geb, .nogeb {
+    position:relative;
+    cursor:pointer;
+    width:100px;
+    height:73px;
+}
+.nogeb {
+    cursor:default;
+}
+.fenster {
+    width:800px;
+    height:475px;  
+}
+.fenster, .menuefenster {
+    background-color:#ffff99;
+    position:absolute;
+    border:2px solid #000000;
+    z-index:1000;
+    padding:5px;
+    top:32px;
+    text-align:left;
+    cursor:default;
+    background-image:url('../../bilder/muster.gif');
+    background-repeat:repeat;
+    overflow:hidden;
+    display:none;
+}
+.menuefenster {
+    position:absolute;
+    top:5px;
+    left:5%;
+    right:5%;
+    height:500px;
+}
+.fenster a, .menuefenster a {
+    color:#ff0000;
+    font-size:16px;
+}
+.fenster h2, .menuefenster h2 {
+    text-align:center;
+}
+.minigeb {
+    height:40px;
+    position:absolute;
+    top:440px;
+    left:750px;
+}
+#wait {
+    display:none;
+    z-index:2000;
+}
+.close {
+    position:absolute;
+    right:5px;
+    font-size:14px;
+    color:#ff0000;
+    text-decoration:none;
+}
+.close:hover {
+    text-decoration:none;
+    font-weight:bold;
+}
+.fenster input {
+    font-size:14px;
+}
+#ansichtmenue {
+    position:absolute;
+    right:5px;
+}
+#hs-optionen, #ks-optionen, .k-optionen, .r-optionen, .p-optionen, .d-optionen {
+    display:none;
+    border-top:1px solid #870101;
+    border-bottom:1px solid #870101;
+}
+.schiff {
+    float:left;
+    margin:2px;
+    cursor:pointer;
+}
+#bauen, #bauen-bg, #bauen-inakt {
+    background-image:url('../../bilder/figuren/bauen.gif');
+    background-repeat:no-repeat;
+    width:100px;
+    height:72px;
+    position:absolute;
+    top:10px;
+    left:690px;
+    cursor:pointer;
+}
+#bauen-bg {
+    background-image:url('../../bilder/figuren/bauen-hover.gif');
+}
+#bauen:hover {
+    background:none;
+}
+#bauen-inakt {
+    background-image:url('../../bilder/figuren/bauen-inaktiv.gif');
+    cursor:default;
+}
+.krieger, .rohstoff, .post, .inaktiv, .transaktion {
+    cursor:pointer;
+    margin-right:2px;
+    float:left;
+}
+.inaktiv {
+    cursor:default;
+}
+select {
+    border:2px solid #000000;
+    background-color:#870101;
+    color:#ffffff;
+    font-family:Capitals, Verdana, Arial;
+    font-size:14px;
+}
+select:focus {
+    border:2px solid #ffffff; 
+}
+.balken {
+    border:1px solid #000000;
+    position:absolute;
+    width:400px;
+    height:12px;
+    background-color:#870101;
+    padding:0;
+    overflow:hidden;
+}
+.balkenbreite {
+    background-color:#ff0000;
+    background-image:url('../../bilder/balken-bg.png');
+    background-repeat:no-repeat;
+    position:absolute;
+    left:0px;
+    top:0px;
+    height:12px;
+    padding:0;
+    margin:0;
+    border-right:1px solid #000000;
+}
+.balkenprozent {
+    font-weight:bold;
+    color:#ffffff;
+    position:absolute;
+    right:1px;
+    height:12px;
+    line-height:12px;
+    text-align:right;
+}
+.nachricht-box, .nback, .komplotthilfebox {
+    display:none;
+}
+.nachricht-box {
+    overflow:auto;
+    height:160px;
+    scrollbar-base-color:#870101;
+    scrollbar-arrow-color:#000000;
+    scrollbar-track-color:#ffff99;
+}
+#tempeltable {
+    width:100%;
+}
+#messe11, #messe21, #messe31, #messe41 {
+    font-weight:bold;
+    cursor:pointer;
+    text-decoration:none;
+    color:#ff0000;
+}
+#baumenue, #reisemenue {
+    height:323px;
+    width:800px;
+    overflow:auto;
+    scrollbar-base-color:#870101;
+    scrollbar-arrow-color:#000000;
+    scrollbar-track-color:#ffff99;
+}
+#bautabelle, #reisetabelle {
+    margin:2px;
+    width:780px;
+}
+#bautabelle td, #reisetabelle td {
+    border-bottom:1px solid #870101;
+    padding:2px;
+}
+#bautabelle .bautd, #reisetabelle .reisetd {
+    text-align:right;
+}
+#bautabelle img, #reisetabelle img {
+    margin-right:20px;
+}
+.zeichen {
+    font-family:Times;
+    color:#870101;
+}
+#rundmailbox {
+    display:none;
 }
